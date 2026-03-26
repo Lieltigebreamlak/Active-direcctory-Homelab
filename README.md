@@ -135,6 +135,8 @@ SRV records must be present for clients to locate DC
 
 Persistence pays off - every error is solvable
 
+
+
 - Current Status
 
 ✅ Domain Controller configured and running
@@ -147,9 +149,46 @@ Persistence pays off - every error is solvable
 
 ✅ Domain user login verified
 
+✅ DHCP configuration
+
 ⏳ Group Policy Objects (next phase)
 
-⏳ DHCP configuration (next phase)
+## 🌐 DHCP Server Configuration
+
+I installed and configured DHCP on the Domain Controller to automatically assign IP addresses to clients, eliminating the need for static IP configuration.
+
+### DHCP Scope Details
+| Setting | Value |
+|---------|-------|
+| Scope Name | Homelab Internal Network |
+| IP Range | 192.168.100.50 - 192.168.100.200 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 192.168.100.1 |
+| DNS Server | 192.168.100.1 |
+| Lease Duration | 8 days |
+
+### Client Receiving IP via DHCP
+![DHCP Client Success](screenshots/dhcp-client-success.png)
+*Client ipconfig showing DHCP-enabled and IP address automatically assigned from the 192.168.100.50-200 range*
+
+### DHCP Server Active Lease
+![DHCP Address Lease](screenshots/dhcp-address-lease.png)
+*DHCP console showing client with active IP address lease, confirming the server is distributing addresses correctly*
+
+### Skills Demonstrated
+- DHCP role installation and authorization in Active Directory
+- Scope creation with proper subnet and options
+- Router (default gateway) configuration in DHCP
+- DNS server configuration in DHCP
+- Client-side DHCP configuration
+- Lease verification and management
+
+### Why DHCP Matters for Help Desk
+DHCP is one of the most common help desk troubleshooting areas. Understanding how to configure, verify, and troubleshoot DHCP prepares me for:
+- **"My computer won't get an IP address"** tickets
+- **"I can't connect to the internet"** - often a DHCP issue
+- **IP conflicts** - understanding lease management
+- **New computer setup** - ensuring DHCP is working
 
 
 

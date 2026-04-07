@@ -221,7 +221,7 @@ I'm currently implementing Group Policy to manage workstation settings across th
 ![GPO Security Filtering](screenshots/gpo-security-filtering.png)
 *Security filtering includes Authenticated Users*
 
-### Registry Settings (Local Test)
+### Registry Settings
 Even though the GPO isn't fully applying yet, I verified the settings work locally:
 
 ```cmd
@@ -234,6 +234,6 @@ reg query "HKCU\Control Panel\Desktop" /v ScreenSaveActive
 - **LinkedIn:** [Lielti Gebreamlak](https://www.linkedin.com/in/lielti-gebreamlak-253555392/)
 
 ## 📚 Resources Used
-- Microsoft Learn: Active Directory Domain Services
+- Microsoft Learn: Active Directory Domain Services and Group Policy Management
 - VirtualBox documentation
 - r/sysadmin homelab community guides

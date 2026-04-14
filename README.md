@@ -228,6 +228,136 @@ Even though the GPO isn't fully applying yet, I verified the settings work local
 reg query "HKCU\Control Panel\Desktop" /v ScreenSaveActive
 
 
+# 🛠️ osTicket Helpdesk Lab (Windows Server + IIS + PHP + MariaDB)
+
+## 📌 Overview
+
+This project demonstrates the deployment of a fully functional **osTicket helpdesk system** in a Windows Server lab environment using IIS, PHP, and MariaDB.
+
+The goal of this lab was to simulate a real-world IT support environment and strengthen skills in:
+
+* System administration
+* Web server configuration
+* Troubleshooting
+* Database setup
+* Helpdesk workflows
+
+---
+
+## 🧱 Lab Environment
+
+* **OS:** Windows Server (VM - VirtualBox)
+* **Web Server:** IIS
+* **Backend:** PHP 8.4 (FastCGI)
+* **Database:** MariaDB 10.11
+* **Application:** osTicket v1.18.3
+
+---
+
+## ⚙️ Key Steps
+
+### 1. IIS Installation & Configuration
+
+* Installed IIS roles and features
+* Enabled CGI for PHP support
+* Configured Default Website
+
+### 2. PHP Setup
+
+* Installed PHP manually
+* Configured `php.ini`
+* Enabled required extensions:
+
+  * mysqli
+  * gd
+  * xml
+  * mbstring
+* Integrated PHP with IIS using FastCGI
+
+### 3. Database Setup (MariaDB)
+
+* Installed MariaDB Server
+* Created database:
+
+  ```sql
+  CREATE DATABASE osticket;
+  ```
+* Created user and assigned privileges
+
+### 4. osTicket Deployment
+
+* Downloaded and extracted osTicket
+* Placed files in:
+
+  ```
+  C:\inetpub\wwwroot\osticket
+  ```
+* Completed web-based installer
+* Connected to MariaDB database
+
+---
+
+## 🔧 Troubleshooting Highlights
+
+During this lab, I resolved multiple issues:
+
+* ❌ HTTP 500 (FastCGI crash)
+  ✔ Fixed by installing Visual C++ Redistributable and correcting `php.ini`
+
+* ❌ PHP syntax errors
+  ✔ Identified and corrected malformed configuration
+
+* ❌ IIS 403 / 404 errors
+  ✔ Fixed default document settings and routing
+
+* ❌ MariaDB not recognized
+  ✔ Resolved PATH issues and command execution errors
+
+* ❌ File permission issues (osTicket config)
+  ✔ Adjusted NTFS permissions for IIS user
+
+---
+
+## 🧪 Testing
+
+* Created test users via web portal
+* Submitted tickets from user interface
+* Managed and responded to tickets via Admin Panel
+
+---
+
+## 🔐 Post-Install Security
+
+* Removed `/setup` directory
+* Restricted write permissions on:
+
+  ```
+  include/ost-config.php
+  ```
+
+##
+
+---
+
+## 🚀 Skills Demonstrated
+
+* Windows Server administration
+* IIS configuration
+* PHP deployment and debugging
+* Database management (MariaDB/MySQL)
+* Web application troubleshooting
+* Helpdesk system implementation
+
+---
+
+## 🎯 Outcome
+
+Successfully deployed and configured a working helpdesk system capable of handling real support tickets.
+
+This lab simulates real world IT support environments and reinforces practical troubleshooting and system setup skills.
+
+##
+
 
 ## 📫 Connect With Me
 - **GitHub:** [@lielti-gebreamlak](https://github.com/lielti-gebreamlak)
